@@ -5,7 +5,6 @@ const loginSignupLink = document.querySelectorAll(".form-content .bottom-link a"
 const loginForm = document.querySelector('#login-form');
 const loginStatus = document.querySelector('#login-status');
 
-// Popup logic
 showPopupBtn.addEventListener("click", () => {
     document.body.classList.toggle("show-popup");
 });
@@ -19,7 +18,6 @@ loginSignupLink.forEach(link => {
     });
 });
 
-// Login form submit logic
 loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -35,18 +33,6 @@ loginForm.addEventListener("submit", async (e) => {
 
         const data = await response.json();
 
-        if (response.ok) {
-            loginStatus.style.color = 'green';
-            loginStatus.textContent = 'Login successful!';
-            // Optionally: redirect or close popup
-            setTimeout(() => {
-                document.body.classList.remove("show-popup");
-                loginStatus.textContent = '';
-            }, 1500);
-        } else {
-            loginStatus.style.color = 'red';
-            loginStatus.textContent = data.error || 'Login failed';
-        }
     } catch (err) {
         loginStatus.style.color = 'red';
         loginStatus.textContent = 'Something went wrong. Try again.';

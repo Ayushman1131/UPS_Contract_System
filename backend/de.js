@@ -16,6 +16,8 @@ const userSchema = new mongoose.Schema(
 
 const User = mongoose.model('User', userSchema);
 
+const boqSchema = new mongoose.Schme
+
 async function debugDocuments() {
 	try {
 		// Exclude _id field

@@ -1,23 +1,28 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const authRoutes = require('./routes/authRoutes');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+const dotenv = require('dotenv');
+const session = require('express-session');
+const env= process.env;
+const connectDB = require('./config/db');
+const userRoutes = require('./routes/userRoutes');
+// const complaintRoutes = require('./routes/complaintRoutes');
+// const contractRoutes = require('./routes/contractRoutes');
+// const maintenanceRoutes = require('./routes/maintenanceRoutes');
+// const upsRoutes = require('./routes/upsRoutes');
 
-require('dotenv').config();
+dotenv.config();
+connectDB(env);
 
 const app = express();
-const PORT = 5000;
+app.use(express.json());
 
-app.use(cors());
-app.use(bodyParser.json());
+app.use(session({
+  secret: 'ups_secret_key_123', // change this in production!
+  resave: false,
+  saveUninitialized: false,
+  cookie: { maxAge: 60 * 60 * 1000 } // 1 hour
+}));
 
-mongoose.connect(process.env.UPSDB_URI)
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.error("MongoDB connection error:", err));
 
-app.use('/api/auth', authRoutes);
+app.use('/etl/user', userRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+app.listen(5000, () => console.log('Server running on port 5000'));
