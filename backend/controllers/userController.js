@@ -1,6 +1,5 @@
 const User= require('../models/User');
 const bcrypt = require('bcrypt');
-const userControl = require('../controllers/userController');
 
 exports.loginUser = async (req, res) => {
   const { login: { emp_id, password } } = req.body;
