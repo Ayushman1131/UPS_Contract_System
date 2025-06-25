@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  border-bottom: 2px solid red;
+}
+/*
+.login-form {
+    height: 400px;
+    width: 700px;
+    border: 2px solid black;
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 20px;
+}
+
+.login-form .btn {
+    margin-top: 20px;
+} */
+
+body {
+  background-color: #f8f9fa;
+}
+.login-container {
+  max-width: 600px;
+  margin: 50px auto;
+  margin-top: 130px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+.title {
+  color: #0d6efd;
+}
+
+.col-form-label {
+  font-size: 15px;
+}
+
+.login-btn {
+  background-color: #00d084;
+  border: none;
+}
+.login-btn:hover {
+  background-color: #00b374;
+}
+.captcha-code {
+  background-color: #0d6efd;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.forgot-password {
+  text-align: center;
+  margin-top: 15px;
+}
+.forgot-password a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 17px;
+}
