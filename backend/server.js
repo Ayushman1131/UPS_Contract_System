@@ -4,10 +4,10 @@ const session = require('express-session');
 const env= process.env;
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
-// const complaintRoutes = require('./routes/complaintRoutes');
-// const contractRoutes = require('./routes/contractRoutes');
-// const maintenanceRoutes = require('./routes/maintenanceRoutes');
-// const upsRoutes = require('./routes/upsRoutes');
+const complaintRoutes = require('./routes/complaintRoutes');
+const contractRoutes = require('./routes/contractRoutes');
+const maintenanceRoutes = require('./routes/maintenanceRoutes');
+const upsRoutes = require('./routes/upsRoutes');
 
 dotenv.config();
 connectDB(env);
@@ -22,7 +22,12 @@ app.use(session({
   cookie: { maxAge: 60 * 60 * 1000 } // 1 hour
 }));
 
-
+app.use('/', express.static('frontend'));
 app.use('/etl/user', userRoutes);
+app.use('/etl/user/:emp_id',userRoutes);
+app.use('/etl/user/:emp_id/complaint', complaintRoutes);
+app.use('/etl/user/:emp_id/contract', contractRoutes);
+app.use('/etl/user/:emp_id/maintenance', maintenanceRoutes);
+app.use('/etl/user/:emp_id/ups', upsRoutes);
 
 app.listen(5000, () => console.log('Server running on port 5000'));

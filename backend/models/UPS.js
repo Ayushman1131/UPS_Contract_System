@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const UPS = new mongoose.Schema({
+const upsSchema= new mongoose.Schema({
   Asset_No: String,
   Contract_ID: String,
   Department: String,
