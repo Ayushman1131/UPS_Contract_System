@@ -1,3 +1,4 @@
+const session = require('express-session');
 const User= require('../models/User');
 const bcrypt = require('bcrypt');
 
@@ -25,10 +26,20 @@ exports.loginUser = async (req, res) => {
 };
 
 exports.renderHome = async (req, res) => {
-  const { emp_id } = req.params;
+  req.params.emp_id;
 
   const user = await User.findOne({ "login.emp_id": emp_id });
   if (!user) return res.status(404).send("User not found");
 
   res.sendFile(path.join(__dirname, '../../frontend/home.html'));
+};
+
+exports.renderFeature = async (req, res) => {
+  if (session.user.role == 'EIC') {
+    return res.sendFile(path.join(__dirname, `../../frontend/${req.params.feature}.html`));
+  }
+
+  if (session.user.role == 'ESI') {
+    return res.sendFile(path.join(__dirname, `../../frontend/${req.params.feature}.html`));
+  }
 };
