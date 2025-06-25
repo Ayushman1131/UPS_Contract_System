@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    border-bottom: 2px solid red;
+}
+
+.complaint-section {
+  background-color: #f4f9fc;
+}
+
+.form-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+span {
+    color: red;
+}
+
+input[type="date"]:hover {
+  cursor: pointer;
+}
+
+/* footer */
+footer{
+  background-color: #f0f0f0;
+  position: relative;
+  bottom: 0;
+}
+
+footer .container {
+  border: 2px solid rgba(0, 0, 0, 0.027);
+}
+
+.footer-mid {
+  background-color: #0D6EFD;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-mid img {
+  max-height: 60px;
+  object-fit: contain;
+  background: white;
+  padding: 5px 10px;
+}
+
+.footer-bottom {
+  background-color: #0D6EFD;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+
