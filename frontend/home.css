@@ -1,11 +1,14 @@
-*{
+* {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+.navbar {
+  border-bottom: 2px solid red;
 }
 
 .navbar-brand img {
-  height: 80px;
+  height: 90px;
 }
 
 .top-header {
@@ -21,11 +24,12 @@
   text-decoration: none;
 }
 
-.top-header .fa, .top-header .bi {
+.top-header .fa,
+.top-header .bi {
   margin-right: 5px;
 }
 
-.green-btn {
+/* .green-btn {
     background-color: #28a745;
     color: white;
     font-weight: bold;
@@ -34,7 +38,7 @@
 .green-btn:hover {
   background-color: #218838;
   color: white;
-}
+} */
 
 .dropdown-menu {
   font-size: 14px;
@@ -60,4 +64,205 @@
 
 .navbar {
   display: flex;
+}
+
+.ups-checker-section {
+  background: linear-gradient(
+    to right,
+    #018fee,
+    #0d6efd
+  ); /* deep purple gradient */
+  color: white;
+  height: 48rem;
+}
+
+.hero-content {
+  font-size: 1.5rem;
+}
+
+.feature-card p {
+  font-size: 1.4rem;
+}
+
+.feature-card:hover {
+  border-left: 4px solid #0d6efd;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+/* complaint module */
+.complaint-module-section,
+.pm-module-section,
+.bill-module-section {
+  background-color: white;
+  border-bottom: 1px solid #679ff4;
+}
+.complaint-module-section,
+.pm-module-section,
+.bill-module-section h2 {
+  color: #002147; /* Steel plant blue tone */
+}
+.complaint-module-section .btn-primary {
+  background-color: #005b8e;
+  border: none;
+}
+
+.left-text h2 {
+  color: #0d6efd;
+}
+
+.left-text p {
+  font-size: 1.4rem;
+}
+
+.left-text .btn {
+  font-size: 1.2rem;
+}
+
+.complaint-mod img {
+  height: 20rem;
+  width: 20rem;
+}
+
+.pm-module img {
+  height: 20rem;
+  width: 20rem;
+}
+
+.pm-bill img {
+  height: 20rem;
+  width: 20rem;
+}
+
+/* footer */
+footer {
+  background-color: #f0f0f0;
+  position: relative;
+  bottom: 0;
+}
+
+footer .container {
+  border: 2px solid rgba(0, 0, 0, 0.027);
+}
+
+.footer-mid {
+  background-color: #0d6efd;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-mid img {
+  max-height: 60px;
+  object-fit: contain;
+  background: white;
+  padding: 5px 10px;
+}
+
+.footer-bottom {
+  background-color: #0d6efd;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .footer-mid {
+    height: auto;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+    overflow-x: auto;
+  }
+
+  .footer-mid img {
+    max-height: 40px;
+    padding: 2px 5px;
+    flex-shrink: 0;
+  }
+
+  .top-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .inner-top-header {
+    margin-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .d-flex.align-items-center.px-4.py-2 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .d-flex.align-items-center.px-4.py-2 img {
+    margin-bottom: 10px;
+  }
+
+  .footer-mid {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .footer-bottom {
+    height: auto;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .footer-top {
+    height: auto;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+
+  .footer-links a {
+    display: inline-block;
+    margin: 8px 6px;
+    font-size: 14px;
+  }
+
+  .left-text,
+  .complaint-mod,
+  .pm-module,
+  .pm-bill {
+    text-align: center;
+  }
+
+  .left-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .left-text p {
+    font-size: 1.2rem;
+  }
+
+  .left-text .btn {
+    font-size: 1rem;
+  }
+
+  .complaint-mod img,
+  .pm-module img,
+  .pm-bill img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .body-img {
+    height: 300px;
+    background-position: center;
+  }
 }
