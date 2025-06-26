@@ -8,9 +8,9 @@ const contractSchema = new mongoose.Schema({
   Equipment_Category: String,
   Quantity: String,
   Duration_Months: Number,
-  Maintenance_Type: String ,
+  Maintenance_Type: String,
   Remarks: String 
-});
+},{collection: "contracts"});
 
 module.exports = mongoose.model('Contract', contractSchema);
   
