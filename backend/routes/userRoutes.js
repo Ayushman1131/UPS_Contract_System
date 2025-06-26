@@ -13,4 +13,8 @@ router.get('/:emp_id/home', renderHome);
 
 // router.put("/:emp_id/home/settings/updateprofile", userController.updateProfile);
 
+router.put("/:emp_id/home/settings/changepassword", userController.updatePassword);
+
+router.put("/:emp_id/home/settings/updateprofile", userController.updateProfile);
+
 module.exports = router;

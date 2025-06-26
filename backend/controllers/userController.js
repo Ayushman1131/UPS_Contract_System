@@ -27,7 +27,11 @@ exports.loginUser = async (req, res) => {
 };
 
 exports.renderHome = async (req, res) => {
+<<<<<<< ayushman
   const emp_id = req.session.user.emp_id;
+=======
+  req.params.emp_id;
+>>>>>>> main
 
   const user = req.session.user;
 
@@ -42,7 +46,22 @@ exports.renderHome = async (req, res) => {
 //     return res.sendFile(path.join(__dirname, `../../frontend/${req.params.feature}.html`));
 //   }
 
+<<<<<<< ayushman
 //   if (session.user.role == 'ESI') {
 //     return res.sendFile(path.join(__dirname, `../../frontend/${req.params.feature}.html`));
 //   }
 // };
+=======
+  res.sendFile(path.join(__dirname, '../../frontend/home.html'));
+};
+
+exports.renderFeature = async (req, res) => {
+  if (session.user.role == 'EIC') {
+    return res.sendFile(path.join(__dirname, `../../frontend/${req.params.feature}.html`));
+  }
+
+  if (session.user.role == 'ESI') {
+    return res.sendFile(path.join(__dirname, `../../frontend/${req.params.feature}.html`));
+  }
+};
+>>>>>>> main

@@ -30,5 +30,12 @@ app.use('/etl/user/:emp_id/complaint', complaintRoutes);
 // app.use('/etl/user/:emp_id/contract', contractRoutes);
 app.use('/etl/user/:emp_id/maintenance', maintenanceRoutes);
 // app.use('/etl/user/:emp_id/ups', upsRoutes);
+app.use('/', express.static('frontend'));
+app.use('/etl/user', userRoutes);
+app.use('/etl/user/:emp_id',userRoutes);
+app.use('/etl/user/:emp_id/complaint', complaintRoutes);
+app.use('/etl/user/:emp_id/contract', contractRoutes);
+app.use('/etl/user/:emp_id/maintenance', maintenanceRoutes);
+app.use('/etl/user/:emp_id/ups', upsRoutes);
 
 app.listen(5000, () => console.log('Server running on port 5000'));
