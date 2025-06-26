@@ -4,6 +4,7 @@ const maintenanceSchema = new mongoose.Schema({
   pm_id: String,
   boq_item_id: String,
   location: String,
+  emp_id: Number,
   pm_date: String,
   pm_done_by: String,
   checklist: {
@@ -30,6 +31,6 @@ const maintenanceSchema = new mongoose.Schema({
   },
   spares_replaced: Boolean,
   remarks: String
-});
+},{collection:"preventive_maintenance"});
 
 module.exports = mongoose.model("Maintenance", maintenanceSchema);

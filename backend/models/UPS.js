@@ -7,6 +7,6 @@ const upsSchema= new mongoose.Schema({
   Location: String,
   Rating: String,
   Serial_N: String,
-});
+},{collection: "boq"});
 
 module.exports = mongoose.model("UPS", upsSchema);

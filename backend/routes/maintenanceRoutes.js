@@ -7,8 +7,8 @@ router.post('/', async (req, res) => {
   res.json(record);
 });
 
-router.get('/:id', async (req, res) => {
-  const record = await Maintenance.findById(req.params.id);
+router.get('/:emp_id', async (req, res) => {
+  const record = await Maintenance.findById(req.params.emp_id);
   res.json(record);
 });
 
