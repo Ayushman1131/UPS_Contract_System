@@ -3,7 +3,7 @@ const hashExistingPasswordsOnce= require('../utils/hashExistingPassword');
 
 const connectDB = async (env) => {
   try {
-    await mongoose.connect(env.UPSDB_URI);
+    await mongoose.connect(env.UPSDB_URI_DEMO);
     console.log("MongoDB connected successfully");
    
     await hashExistingPasswordsOnce();

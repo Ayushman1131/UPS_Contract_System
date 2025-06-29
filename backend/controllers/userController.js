@@ -26,42 +26,33 @@ exports.loginUser = async (req, res) => {
   res.redirect(`/etl/user/${user.login.emp_id}/home`);
 };
 
+exports.logoutUser = (req, res) => {
+  req.session?.destroy(err => {
+    if (err) {
+      console.error('Logout error:', err);
+      return res.status(500).json({ message: 'Logout failed' });
+    }
+
+    res.clearCookie('connect.sid', {
+      path: '/',
+    });
+
+    res.redirect('/etl/user');
+  });
+};
 exports.renderHome = async (req, res) => {
-<<<<<<< ayushman
   const emp_id = req.session.user.emp_id;
-=======
-  req.params.emp_id;
->>>>>>> main
-
-  const user = req.session.user;
-
-  if (!user || user.emp_id !== emp_id) {
+  
+  if (!emp_id) {
     return res.status(403).send("Unauthorized access");
   }
   res.sendFile(path.join(__dirname, '../../frontend/home.html'))
 };
 
-// exports.renderFeature = async (req, res) => {
-//   if (session.user.role == 'EIC') {
-//     return res.sendFile(path.join(__dirname, `../../frontend/${req.params.feature}.html`));
-//   }
-
-<<<<<<< ayushman
-//   if (session.user.role == 'ESI') {
-//     return res.sendFile(path.join(__dirname, `../../frontend/${req.params.feature}.html`));
-//   }
-// };
-=======
-  res.sendFile(path.join(__dirname, '../../frontend/home.html'));
-};
-
 exports.renderFeature = async (req, res) => {
-  if (session.user.role == 'EIC') {
-    return res.sendFile(path.join(__dirname, `../../frontend/${req.params.feature}.html`));
-  }
+  const role= req.session.user.role;
 
-  if (session.user.role == 'ESI') {
-    return res.sendFile(path.join(__dirname, `../../frontend/${req.params.feature}.html`));
+  if(role == 'ESI'){
+    res.sendFile(path.join(__dirname, '../../frontend/esi.css'));
   }
 };
->>>>>>> main

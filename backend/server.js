@@ -8,6 +8,7 @@ const complaintRoutes = require('./routes/complaintRoutes');
 const contractRoutes = require('./routes/contractRoutes');
 const maintenanceRoutes = require('./routes/maintenanceRoutes');
 const upsRoutes = require('./routes/upsRoutes');
+const {requireLogin}= require('./utils/auth');
 
 dotenv.config();
 connectDB(env);
@@ -26,16 +27,16 @@ app.use(session({
 // app.use('/', express.static('frontend'));
 app.use('/etl/user', userRoutes);
 // app.use('/etl/user/:emp_id',userRoutes);
-app.use('/etl/user/:emp_id/complaint', complaintRoutes);
+app.use('/etl/user/:emp_id/complaint', requireLogin, complaintRoutes);
 // app.use('/etl/user/:emp_id/contract', contractRoutes);
-app.use('/etl/user/:emp_id/maintenance', maintenanceRoutes);
+app.use('/etl/user/:emp_id/maintenance', requireLogin, maintenanceRoutes);
 // app.use('/etl/user/:emp_id/ups', upsRoutes);
-app.use('/', express.static('frontend'));
-app.use('/etl/user', userRoutes);
-app.use('/etl/user/:emp_id',userRoutes);
-app.use('/etl/user/:emp_id/complaint', complaintRoutes);
-app.use('/etl/user/:emp_id/contract', contractRoutes);
-app.use('/etl/user/:emp_id/maintenance', maintenanceRoutes);
-app.use('/etl/user/:emp_id/ups', upsRoutes);
+// app.use('/', express.static('frontend'));
+// app.use('/etl/user', userRoutes);
+// app.use('/etl/user/:emp_id',userRoutes);
+// app.use('/etl/user/:emp_id/complaint', complaintRoutes);
+// app.use('/etl/user/:emp_id/contract', contractRoutes);
+// app.use('/etl/user/:emp_id/maintenance', maintenanceRoutes);
+// app.use('/etl/user/:emp_id/ups', upsRoutes);
 
 app.listen(5000, () => console.log('Server running on port 5000'));
