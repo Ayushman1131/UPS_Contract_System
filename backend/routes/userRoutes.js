@@ -9,7 +9,7 @@ router.post("/", loginUser);
 router.get("/:emp_id/home", renderHome);
 
 router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/login.html'));
+  res.sendFile(path.join(__dirname, 'login.html'));
 });
 
 router.get("/:emp_id/home/logout", logoutUser);

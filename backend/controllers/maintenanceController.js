@@ -4,7 +4,6 @@ const path = require('path');
 exports.getMaintenanceRecords = async (req, res) => {
   try {
     const emp_id = req.session?.user?.emp_id;
-
     if (!emp_id) {
       return res.status(403).send("Unauthorized access");
     }
@@ -22,8 +21,6 @@ exports.raiseMaintenanceRequest = async (req, res) => {
 	
 	try {
 		const emp_id = req.session?.user?.emp_id;
-		
-		
 		const record = await Maintenance.create({
 			emp_id: emp_id,
 			...req.body});
