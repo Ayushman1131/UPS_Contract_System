@@ -26,42 +26,42 @@ exports.loginUser = async (req, res) => {
   res.redirect(`/etl/user/${user.login.emp_id}/home`);
 };
 
+exports.logoutUser = (req, res) => {
+  req.session?.destroy(err => {
+    if (err) {
+      console.error('Logout error:', err);
+      return res.status(500).json({ message: 'Logout failed' });
+    }
+
+    res.clearCookie('connect.sid', {
+      path: '/',
+    });
+
+    res.redirect('/');
+  });
+};
 exports.renderHome = async (req, res) => {
-<<<<<<< ayushman
   const emp_id = req.session.user.emp_id;
-=======
-  req.params.emp_id;
->>>>>>> main
-
-  const user = req.session.user;
-
-  if (!user || user.emp_id !== emp_id) {
+  
+  if (!emp_id) {
     return res.status(403).send("Unauthorized access");
   }
-  res.sendFile(path.join(__dirname, '../../frontend/home.html'))
+  res.sendFile(path.join(__dirname, '..','..','frontend','home.html'))
 };
 
-// exports.renderFeature = async (req, res) => {
-//   if (session.user.role == 'EIC') {
-//     return res.sendFile(path.join(__dirname, `../../frontend/${req.params.feature}.html`));
-//   }
-
-<<<<<<< ayushman
-//   if (session.user.role == 'ESI') {
-//     return res.sendFile(path.join(__dirname, `../../frontend/${req.params.feature}.html`));
-//   }
-// };
-=======
-  res.sendFile(path.join(__dirname, '../../frontend/home.html'));
+exports.renderLogin = async (req, res) => {
+    res.sendFile(path.join(__dirname,'..','..','frontend','login.html'));
 };
 
-exports.renderFeature = async (req, res) => {
-  if (session.user.role == 'EIC') {
-    return res.sendFile(path.join(__dirname, `../../frontend/${req.params.feature}.html`));
+exports.sessionCheck = async (req, res) => {
+  const accepts = req.get('Accept');
+
+  if (!accepts || !accepts.includes('application/json')) {
+    return res.status(403).send("Forbidden");
   }
-
-  if (session.user.role == 'ESI') {
-    return res.sendFile(path.join(__dirname, `../../frontend/${req.params.feature}.html`));
+  
+  if (!req.session.user) {
+    return res.status(403).json({ message: 'No session found' });
   }
+  res.json(req.session.user);
 };
->>>>>>> main

@@ -1,25 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const { maintenanceReports,maintenanceRaise,maintenanceForm, maintenanceID }= require('../controllers/maintenanceController');
 const Maintenance = require('../models/Maintenance');
 
-router.post('/', async (req, res) => {
-  const record = await Maintenance.create(req.body);
-  res.json(record);
-});
+router.get('/records', maintenanceReports);
 
-router.get('/:emp_id', async (req, res) => {
-  const record = await Maintenance.findById(req.params.emp_id);
-  res.json(record);
-});
+router.get('/form', maintenanceForm);
 
-router.get('/', async (req, res) => {
-  const logs = await Maintenance.find();
-  res.json(logs);
-});
+router.post('/form', maintenanceRaise);
 
-router.get('/byUPS/:upsId', async (req, res) => {
-  const logs = await Maintenance.find({ upsId: req.params.upsId });
-  res.json(logs);
-});
+router.get('/maintenance-id', maintenanceID);
 
 module.exports = router;

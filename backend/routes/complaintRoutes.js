@@ -1,27 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const { complaintReport, complaintRaise,complaintForm ,complaintID} = require('../controllers/complaintController');
 const Complaint = require('../models/Complaint');
-const { complaintReport, complaintRaise } = require('../controllers/complaintController');
 
-// router.post('/', 
+router.get('/records', complaintReport);
 
-// router.get('/:id', complainReport);
+router.get('/form', complaintForm)
 
-// router.get('/', async (req, res) => {
-//   const complaints = await Complaint.find();
-//   res.json(complaints);
-// });
-router.get('/', complaintReport);
-router.post('/complaintraise', complaintRaise);
+router.post('/form', complaintRaise);
 
-router.put('/:id', async (req, res) => {
-  const updated = await Complaint.findByIdAndUpdate(req.params.id, req.body, { new: true });
-  res.json(updated);
-});
-
-router.get('/byContract/:contractId', async (req, res) => {
-  const complaints = await Complaint.find({ contractId: req.params.contractId });
-  res.json(complaints);
-});
+router.get('/complaint-id',complaintID);
 
 module.exports = router;
