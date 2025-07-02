@@ -1,9 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const { getMaintenanceRecords,raiseMaintenanceRequest }= require('../controllers/maintenanceController');
+const { maintenanceReports,maintenanceRaise,maintenanceForm, maintenanceID }= require('../controllers/maintenanceController');
+const Maintenance = require('../models/Maintenance');
 
-router.post('/form', raiseMaintenanceRequest);
+router.get('/records', maintenanceReports);
 
-router.get('/records', getMaintenanceRecords);
+router.get('/form', maintenanceForm);
+
+router.post('/form', maintenanceRaise);
+
+router.get('/maintenance-id', maintenanceID);
 
 module.exports = router;

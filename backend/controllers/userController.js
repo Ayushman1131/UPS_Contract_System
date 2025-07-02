@@ -37,22 +37,32 @@ exports.logoutUser = (req, res) => {
       path: '/',
     });
 
-    res.redirect('/etl/user');
+    res.redirect('/');
   });
 };
+
 exports.renderHome = async (req, res) => {
   const emp_id = req.session.user.emp_id;
   
   if (!emp_id) {
     return res.status(403).send("Unauthorized access");
   }
-  res.sendFile(path.join(__dirname, '../../frontend/home.html'))
+  res.sendFile(path.join(__dirname, '..','..','frontend','home.html'))
 };
 
-exports.renderFeature = async (req, res) => {
-  const role= req.session.user.role;
+exports.renderLogin = async (req, res) => {
+    res.sendFile(path.join(__dirname,'..','..','frontend','login.html'));
+};
 
-  if(role == 'ESI'){
-    res.sendFile(path.join(__dirname, '../../frontend/esi.css'));
+exports.sessionCheck = async (req, res) => {
+  const accepts = req.get('Accept');
+
+  if (!accepts || !accepts.includes('application/json')) {
+    return res.status(403).send("Forbidden");
   }
+  
+  if (!req.session.user) {
+    return res.status(403).json({ message: 'No session found' });
+  }
+  res.json(req.session.user);
 };

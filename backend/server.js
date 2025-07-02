@@ -15,7 +15,7 @@ connectDB(env);
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname,'frontend')));
+app.use(express.static(path.join(__dirname,'..','frontend')));
 
 app.use(session({
   secret: env.secret_key,
@@ -25,7 +25,7 @@ app.use(session({
 }));
 
 app.use('/etl/user', userRoutes);
-app.use('/etl/user/:emp_id/complaint', requireLogin, complaintRoutes);
-app.use('/etl/user/:emp_id/maintenance', requireLogin, maintenanceRoutes);
+app.use('/etl/user/:emp_id/home/complaint', requireLogin, complaintRoutes);
+app.use('/etl/user/:emp_id/home/maintenance', requireLogin, maintenanceRoutes);
 
-app.listen(5000, () => console.log('Server running on port 5000'));
+app.listen(5000, () => console.log('Server running on port http://localhost:5000'));

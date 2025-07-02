@@ -1,18 +1,17 @@
 // routes/userRoutes.js
-const path = require("path");
 const express = require("express");
 const router = express.Router();
-const { loginUser, renderHome,logoutUser } = require("../controllers/userController");
+const { loginUser, renderHome,logoutUser, renderLogin,sessionCheck } = require("../controllers/userController");
 
 router.post("/", loginUser);
 
+router.get('/session', sessionCheck);
+
 router.get("/:emp_id/home", renderHome);
 
-router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'login.html'));
-});
-
 router.get("/:emp_id/home/logout", logoutUser);
+
+router.get('/',renderLogin);
 
 // router.get('/:emp_id/home/:feature', renderFeature);
 
