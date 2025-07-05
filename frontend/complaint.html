@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <base href="/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>complaint module</title>
@@ -37,83 +38,81 @@
       <div class="container">
         <h2 class="fw-bold text-center mb-4">Complaint Registration</h2>
 
-        <form class="p-4 bg-white shadow rounded">
-          <p class="fw-semibold fs-4">Welcome Mr. #######</p>
+        <form class="p-4 bg-white shadow rounded" id="complaintForm">
+          <p id="heading-link" class="fw-semibold fs-4"></p>
 
           <div class="row mb-3">
             <div class="col-md-4">
               <label class="form-label">Compl. Dt:</label>
-              <input type="date" class="form-control" value="2025-06-12" />
+              <input type="date" class="form-control" id="date-now"/>
             </div>
             <div class="col-md-4">
               <label class="form-label">ETL Asset Number:</label>
-              <input type="text" class="form-control" value="08091632-33" />
+              <input type="text" class="form-control" id="assetNumber"/>
             </div>
             <div class="col-md-4">
               <label class="form-label">Ratings:</label>
-              <input type="text" class="form-control" value="2 X 20" />
+              <input type="text" class="form-control" id="ratings"/>
             </div>
           </div>
 
           <div class="row mb-3">
             <div class="col-md-4">
               <label class="form-label">Location:</label>
-              <input type="text" class="form-control" value="BF-3 PCI" />
+              <input type="text" class="form-control" id="location"/>
             </div>
             <div class="col-md-4">
               <label class="form-label">Department:</label>
-              <input type="text" class="form-control" value="BF" />
+              <input type="text" class="form-control" id="department"/>
             </div>
             <div class="col-md-4">
               <label class="form-label">Zone:</label>
-              <input type="text" class="form-control" value="BF-3" />
+              <input type="text" class="form-control" id="zone"/>
             </div>
           </div>
 
           <div class="mb-3">
             <label class="form-label">BOQ Item Detail:</label>
             <input
+              id="boqItemId"
               type="text"
               class="form-control"
-              value="410005251-PREV&B/DMAINTENANCEOF2* 20KVAUPS"
             />
           </div>
 
           <div class="row mb-3">
             <div class="col-md-6">
               <label class="form-label">Max Phone: <span>*</span></label>
-              <input type="text" class="form-control" required />
+              <input type="text" class="form-control" id="maxNo" required />
             </div>
             <div class="col-md-6">
               <label class="form-label">Mobile No.: <span>*</span></label>
-              <input type="text" class="form-control" required />
+              <input id="mobileNo"type="text" class="form-control" required />
             </div>
           </div>
 
           <div class="mb-3">
             <label class="form-label">Complaint Category: <span>*</span></label>
-            <select class="form-select" required>
+            <select id="category" class="form-select" required>
               <option value="">Select Complaint Category</option>
-              <option value="">DC Over voltage</option>
-              <option value="">Inverter Overvoltage</option>
-              <option value="">Inverter Overload trip</option>
-              <option value="">Inverter Limb 1 or Limb2 fault - trip</option>
-              <option value="">CPU fault - trip</option>
-              <option value="">Over temperature trip</option>
-              <option value="">Alternate supply Under voltage</option>
-              <option value="">Alternate supply Over voltage</option>
-              <option value="">
-                Alternate supply frequency out of sync limits
-              </option>
-              <option value="">Static switch transfer to Alternate</option>
-              <option value="">MCB trip</option>
-              <option value="">Input Under voltage</option>
-              <option value="">Input Over voltage</option>
-              <option value="">Battery discharging</option>
-              <option value="">End of discharge</option>
-              <option value="">Inverter Under voltage</option>
-              <option value="">Inverter Overload</option>
-              <option value="">Others</option>
+              <option value="DC Over voltage">DC Over voltage</option>
+              <option value="Inverter Overvoltage">Inverter Overvoltage</option>
+              <option value="Inverter Overload trip">Inverter Overload trip</option>
+              <option value="Inverter Limb 1 or Limb 2">Inverter Limb 1 or Limb2 fault - trip</option>
+              <option value="CPU fault = trip">CPU fault - trip</option>
+              <option value="Over temperature trip">Over temperature trip</option>
+              <option value="Alternative supply Under voltage">Alternate supply Under voltage</option>
+              <option value="Alternate supply Over voltage">Alternate supply Over voltage</option>
+              <option value="Alternate supply frequency out of sync limits">Alternate supply frequency out of sync limits</option>
+              <option value="Static switch transfer to Alternate">Static switch transfer to Alternate</option>
+              <option value="MCB trip">MCB trip</option>
+              <option value="Input Under voltage">Input Under voltage</option>
+              <option value="Input Over voltage">Input Over voltage</option>
+              <option value="Battery discharging">Battery discharging</option>
+              <option value="End of discharge">End of discharge</option>
+              <option value="Inverter Under voltage">Inverter Under voltage</option>
+              <option value="Inverter Overload">Inverter Overload</option>
+              <option value="Others">Others</option>
             </select>
           </div>
 
@@ -121,7 +120,7 @@
             <label class="form-label"
               >Complaint Description: <span>*</span></label
             >
-            <textarea class="form-control" rows="4" required></textarea>
+            <textarea class="form-control" rows="4" id="description" required></textarea>
           </div>
 
           <p class="text-muted fst-italic">
@@ -155,6 +154,7 @@
       </div>
     </footer>
 
+    <script src="complaint.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link
       rel="stylesheet"

@@ -14,7 +14,7 @@ const complaintSchema = new mongoose.Schema({
     location : String,  //
     ratings : String, //
     zone : String,  //
-    status: { type: String, default: 'Open' } // Default status set to 'Pending'
+    Status: { type: String, default: 'Open' }
 }, {collection: "complaints"});
 
 module.exports = mongoose.model('Complaint', complaintSchema);

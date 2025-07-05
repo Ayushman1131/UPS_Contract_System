@@ -10,7 +10,7 @@ exports.maintenanceRaise = async (req, res) => {
 			emp_id: emp_id,
 			...req.body});
 		
-		res.status(201).json("Maintenance request raised successfully: " + record);
+		res.status(201).json(`Maintenance request raised successfully with ID: ${req.body.maintenance_id}`);
 
 	} catch (error) {
 		res.status(500).send("Server error: " + error.message);
@@ -32,37 +32,65 @@ exports.maintenanceID = async (req, res) => {
 
 
 exports.maintenanceReports = async (req, res) => {
+	const userZone = req.session?.user?.zone;
+	const records = await Maintenance.find({zone: userZone});
+	
+	if (records.length === 0) {
+  return res.status(404).json({ message: 'No maintenance records found for your zone.' });
+		}
+	res.json(records);
+};
+
+exports.maintenanceReportpage = async (req, res) => {
+	res.sendFile(path.join(__dirname,'..','..', 'frontend', 'Maintenance_Report.html'));
+}
+
+exports.maintenanceApprovalpage = async (req, res) => {
+	res.sendFile(path.join(__dirname,'..','..', 'frontend', 'PM_Approval.html'));
+}
+
+exports.maintenanceVerificationpage = async (req, res) => {
+	res.sendFile(path.join(__dirname,'..','..', 'frontend', 'PM_Verification.html'));
+}
+
+exports.getVerifiedDetails = async (req, res) => {
+  const userZone = req.session?.user?.zone;
+
   try {
-    const emp_id = req.session?.user?.emp_id;
-    if (!emp_id) {
-      return res.status(403).send("Unauthorized access");
+    const records = await Maintenance.find({
+      zone: userZone,
+      verified: true,
+      $or: [
+        { approved: false },
+        { approved: { $exists: false } }
+      ]
+    });
+
+    if (records.length === 0) {
+      return res.json('No verified maintenance records found for your zone.');
     }
 
-    const records = await Maintenance.find();
     res.json(records);
-  } catch (error) {
-    res.status(500).send("Server error: " + error.message);
+  } catch (err) {
+    res.status(500).send("Server error: " + err.message);
   }
 };
 
 
-
-exports.updateMaintenanceRequest = async (req, res) => {
+exports.updateStatus = async (req, res) => {
 	try {
-		const emp_id = req.session?.user?.emp_id;
-
-		if (!emp_id) {
-			return res.status(403).send("Unauthorized access");
-		}
-
-		const { id } = req.params;
-		const record = await Maintenance.findByIdAndUpdate(id, req.body, { new: true });
+		const pmId = req.body.pm_id;		
+		const record = await Maintenance.findOneAndUpdate(
+			{ pm_id: pmId },
+			{ $set: req.body },
+			{ new: true }
+		);
 
 		if (!record) {
-			return res.status(404).send("Maintenance request not found");
+			return res.json("Maintenance request not found");
 		}
 
-		res.json("Maintenance request updated successfully: " + record);
+		res.json(`Maintenance request updated successfully`);
 	} catch (error) {
 		res.status(500).send("Server error: " + error.message);
 	}

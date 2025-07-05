@@ -13,4 +13,3 @@ const contractSchema = new mongoose.Schema({
 },{collection: "contracts"});
 
 module.exports = mongoose.model('Contract', contractSchema);
-  

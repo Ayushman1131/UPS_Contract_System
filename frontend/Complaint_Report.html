@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<base href="/" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Complaint Report</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="Complaint_Report.css" />
+</head>
+
+<body>
+	<!-- NAVBAR -->
+	<div class="navbar d-flex justify-content-between align-items-center px-4 py-2">
+		<div class="d-flex align-items-center">
+			<img src="rinl-logo.png" alt="VIZAG Steel Logo" height="80" class="me-3" />
+			<div>
+				<h4 class="m-0">Rashtriya Ispat Nigam Limited</h4>
+				<h5 class="text-success m-0">Visakhapatnam Steel Plant</h5>
+				<small>(A Govt. of India Enterprise)</small>
+			</div>
+		</div>
+		<div class="d-flex">
+			<img src="rinl-logo2.jpg" alt="Beti Bachao" height="80" class="me-3" />
+			<img src="rinl-logo3.jpg" alt="Yoga" height="80" />
+		</div>
+	</div>
+
+	<!-- MAIN CONTENT -->
+	<section class="ups-drive-section py-5">
+		<div class="container bg-white rounded shadow p-4">
+			<h4 class="fw-bold mb-3 text-center text-md-start">Complaint Reports</h4>
+
+			<!-- Table Heading for desktop -->
+			<div class="row fw-bold text-muted border-bottom pb-2 mb-2 small text-uppercase d-none d-md-flex">
+				<div class="col-md-6">Complaint ID</div>
+				<div class="col-md-3">Date</div>
+				<div class="col-md-3">Action</div>
+			</div>
+
+			<!-- Dynamic List -->
+			<div id="complaint-list"></div>
+
+			<div class="text-center mt-4">
+				<button class="btn btn-primary back-btn">← Back</button>
+			</div>
+		</div>
+	</section>
+
+	<!-- MODAL -->
+	<div class="modal fade" id="complaintModal" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content text-start">
+				<div class="modal-header">
+					<h5 class="modal-title">Complaint Details</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<!-- Content injected by JS -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- SCRIPTS -->
+	<script src="Complaint_Report.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+</body>
+</html>

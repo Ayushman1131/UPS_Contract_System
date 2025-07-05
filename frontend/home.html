@@ -1,207 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-     <link rel="stylesheet" href="home.css" />
-  </head>
-  <body>
-    <!-- Logo and Title -->
-    <div
-      class="navbar d-flex justify-content-between  px-4 py-2"
-    >
-      <div class="d-flex align-items-center">
-        <img
-          src="rinl-logo.png"
-          alt="VIZAG Steel Logo"
-          height="80"
-          class="me-3"
-        />
-        <div>
-          <h4 class="m-0">Rashtriya Ispat Nigam Limited</h4>
-          <h5 class="text-success m-0">Visakhapatnam Steel Plant</h5>
-          <small>(A Govt. of India Enterprise)</small>
+
+<head>
+  <meta charset="UTF-8" />
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="home.css" />
+</head>
+
+<body>
+  <!-- Logo and Title -->
+  <div class="navbar d-flex justify-content-between px-4 py-2">
+    <div class="d-flex align-items-center">
+      <img src="rinl-logo.png" alt="VIZAG Steel Logo" height="80" class="me-3" />
+      <div>
+        <h4 class="m-0">Rashtriya Ispat Nigam Limited</h4>
+        <h5 class="text-success m-0">Visakhapatnam Steel Plant</h5>
+        <small>(A Govt. of India Enterprise)</small>
+      </div>
+    </div>
+    <div class="logo d-flex">
+      <img src="rinl-logo2.jpg" alt="Beti Bachao" height="80" class="me-3" />
+      <img src="rinl-logo3.jpg" alt="Yoga" height="80" />
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar-bottom navbar-expand-lg navbar-dark bg-green px-1 fs-2 fw-bold text-white mx-auto"
+    style="background-color: mediumseagreen; height: 60px;">
+    <div class="container-fluid">
+      <a class="navbar-brand mx-auto" href="#"></a>
+
+    </div>
+  </nav>
+
+  <section class="ups-checker-section py-5 text-white d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- Left Column -->
+        <div class="col-md-6 mb-4 mb-md-0">
+          <small class="hero-content text-uppercase">UPS Contract Management Portal – RINL</small>
+          <h1 class="fw-bold display-5 mt-2">Register Complaints & Submit PM Reports Instantly</h1>
+          <p class="hero-content mt-3">
+            This internal portal enables RINL teams to log UPS-related complaints, submit preventive maintenance
+            reports,
+            and track ETL contract progress — all from a centralized dashboard.
+          </p>
+
+          <!-- <p class="hero-content mt-3 ">This system enables seamless UPS issue tracking and maintenance reporting, reducing delays and improving reliability in power-sensitive areas of the plant.</p> -->
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-md-6 text-center">
+          <img src="homePage_img.webp" alt="UPS System Illustration" class="img-fluid" style="max-height: 400px;">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="resources-section py-5" style="background-color: #002147;">
+    <div class="container bg-white rounded shadow p-5 pb-4">
+
+      <h4 class="fw-bold text-primary mb-4 border-bottom pb-2">
+        Want more? Discover key features of this portal.
+      </h4>
+
+      <!-- Feature 1 -->
+      <div class="feature-card border rounded p-3 mb-3 shadow-sm">
+        <h5 class="fw-bold text-uppercase text-primary">Complaint Registration</h5>
+        <p class="text-muted mb-0">
+          Instantly log issues related to UPS systems across all RINL zones. Complaints are categorized and stored with
+          asset details for quicker response by contractors and coordinators.
+        </p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="feature-card border rounded p-3 mb-3 shadow-sm">
+        <h5 class="fw-bold text-uppercase text-primary">Preventive Maintenance Submission</h5>
+        <p class="text-muted mb-0">
+          Submit monthly PM reports in a structured digital format. This improves traceability of maintenance activities
+          and ensures timely upkeep of UPS equipment under ETL contracts.
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="feature-card border rounded p-3 mb-3 shadow-sm">
+        <h5 class="fw-bold text-uppercase text-primary">Complaint Status & Approval Panel</h5>
+        <p class="text-muted mb-0">
+          Coordinators and EICs can track complaint resolution status and review PM submissions. Built-in workflow
+          simplifies review, feedback, and approval — all in one place.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- complaint form module -->
+  <section class="complaint-form-section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- Left: Text Content -->
+        <div class="left-text col-md-6">
+          <h2 class="fw-bold mb-3">Register UPS Complaints Effortlessly</h2>
+          <p class="text-muted">
+            The complaint module allows contractors and plant personnel to report issues related to UPS systems across
+            all zones. Each complaint is tagged with an asset number, timestamp, and location for effective resolution
+            tracking.
+          </p>
+          <p class="text-muted">
+            Coordinators and EICs can review submitted complaints, monitor resolution progress, and escalate if
+            required. The system ensures timely action, accountability, and improved communication between teams.
+          </p>
+          <a id="complaint-form-link" class="btn btn-success mt-3">Log a New Complaint</a>
+        </div>
+
+        <!-- Right: Illustration -->
+        <div class="complaint-mod col-md-6 text-center">
+          <img src="complaint-img.png" alt="Complaint Module Graphic">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- pm form -->
+  <section class="pm-form-section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- Left: Text Content -->
+        <div class="left-text col-md-6">
+          <h2 class="fw-bold mb-3">Submit Preventive Maintenance Reports Digitally</h2>
+          <p class="text-muted">
+            The PM module enables contractors to upload monthly Preventive Maintenance checklists for each UPS asset as
+            per ETL contract requirements. The digital submission ensures structured reporting and traceable records.
+          </p>
+          <p class="text-muted">
+            EICs and coordinators can review these reports, verify fieldwork, and approve or return them with remarks —
+            streamlining the entire compliance workflow across departments and zones.
+          </p>
+          <a id="pm-link" class="btn btn-success mt-3">Raise Preventive Maintenance</a>
+        </div>
+
+        <!-- Right: Illustration -->
+        <div class="pm-module col-md-6 text-center">
+          <img src="pm-img2.png" alt="PM Module Graphic" style="background-color: white;">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- view pm bill module -->
+  <section class="pm-bill-section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- Left: Text Content -->
+        <div class="left-text col-md-6">
+          <h2 class="fw-bold mb-3">Track and View PM Billing Status</h2>
+          <p class="text-muted">
+            This module allows authorized users to view the monthly preventive maintenance bills submitted under the ETL
+            UPS contract. It includes information on asset-wise PM completion, submission dates, and billing
+            verification status.
+          </p>
+          <p class="text-muted">
+            Coordinators and EICs can cross-check reports, ensure compliance, and monitor billing summaries — ensuring
+            accountability and process transparency across maintenance cycles.
+          </p>
+          <a id="pm-bill-link" class="btn btn-success mt-3">View PM Bill</a>
+        </div>
+
+        <!-- Right: Illustration -->
+        <div class="pm-bill col-md-6 text-center">
+          <img src="pm-bill-img2.png" alt="PM bill" style="background-color: white;">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- view complaint report module -->
+  <section class="complaint-report-section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- Left: Complaint Report -->
+        <div class="left-text col-md-6">
+          <h2 class="fw-bold mb-3">View UPS Complaint Reports</h2>
+          <p class="text-muted">
+            Access complaint reports submitted by Engineer In Charge, Engineer Contract Cell, Zone-wise Electrical
+            Section Coordinators and Section Incharge.
+          </p>
+          <a id="complaint-report-link" class="btn btn-warning mt-3">View Complaint Report</a>
+        </div>
+
+        <!-- Right: Illustration -->
+        <div class="complaint-mod col-md-6 text-center">
+          <img src="complaint-report.png" alt="Complaint Report" style="background-color: white;">
         </div>
       </div>
-      <div class="logo d-flex">
-        <img src="rinl-logo2.jpg" alt="Beti Bachao" height="80" class="me-3" />
-        <img src="rinl-logo3.jpg" alt="Yoga" height="80" />
+  </section>
+
+  <!-- view pm report module -->
+  <section class="pm-report-section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- Left: PM Report -->
+        <div class="left-text col-md-6">
+          <h2 class="fw-bold mb-3">View UPS Preventive Reports</h2>
+          <p class="text-muted">
+            Access Preventive Maintenance submitted by Contract Service Engineer.
+          </p>
+          <a id="pm-report-link" class="btn btn-warning mt-3">View Maintenance Report</a>
+        </div>
+
+        <!-- Right: Illustration -->
+        <div class="complaint-mod col-md-6 text-center">
+          <img src="pm-report.png" alt="Maintenance Report" style="background-color: white;">
+        </div>
       </div>
+  </section>
+
+  <!-- view pmApproval module -->
+  <section class="pm-approval-section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- Left: PM Report -->
+        <div class="left-text col-md-6">
+          <h2 class="fw-bold mb-3">View UPS Preventive Reports Approval</h2>
+          <p class="text-muted">
+            View Preventive Maintenance Report submitted by Contract Service Engineer.
+          </p>
+          <a id="pm-approval-link" class="btn btn-warning mt-3">Approve PM</a>
+        </div>
+
+        <!-- Right: Illustration -->
+        <div class="complaint-mod col-md-6 text-center">
+          <img src="pm-report.png" alt="Maintenance Report" style="background-color: white;">
+        </div>
+      </div>
+  </section>
+
+  <!-- view pm Verfication module -->
+  <section class="pm-verification-section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- Left: PM Report -->
+        <div class="left-text col-md-6">
+          <h2 class="fw-bold mb-3">View UPS Preventive Verification Reports</h2>
+          <p class="text-muted">
+            View Preventive Maintenance Verification Report submitted by Contract Service Engineer.
+          </p>
+          <a id="pm-verification-link" class="btn btn-warning mt-3">Verify Maintenance Reports</a>
+        </div>
+
+        <!-- Right: Illustration -->
+        <div class="complaint-mod col-md-6 text-center">
+          <img src="pm-report.png" alt="Maintenance Report" style="background-color: white;">
+        </div>
+      </div>
+  </section>
+
+  <!-- view Complaint Inbox module -->
+  <section class="complaint-inbox-section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- Left: PM Report -->
+        <div class="left-text col-md-6">
+          <h2 class="fw-bold mb-3">View Complaint Inbox</h2>
+          <p class="text-muted">
+            View All UPS Complaint Inbox.
+          </p>
+          <a id="complaint-inbox-link" class="btn btn-warning mt-3">View Complaint Inbox</a>
+        </div>
+
+        <!-- Right: Illustration -->
+        <div class="complaint-mod col-md-6 text-center">
+          <img src="pm-report.png" alt="Maintenance Report" style="background-color: white;">
+        </div>
+      </div>
+  </section>
+
+  <!-- footer -->
+  <!-- Footer -->
+  <footer class="container-fluid px-4 py-3">
+
+    <!-- Middle Logos Row -->
+    <div class="footer-mid">
+      <img src="footer-img5.png" alt="India Gov" width="150px">
+      <img src="footer-img4.png" alt="CMMI">
+      <img src="Footer-img1.jpg" alt="Climate Action">
     </div>
 
-    <!-- Navbar -->
-    <nav class="navbar-bottom navbar-expand-lg navbar-dark bg-primary px-4">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"></a>
-        
-      </div>
-    </nav>
-
-    <section class="ups-checker-section py-5 text-white d-flex align-items-center">
-  <div class="container">
-    <div class="row align-items-center">
-
-      <!-- Left Column -->
-      <div class="col-md-6 mb-4 mb-md-0">
-        <small class="hero-content text-uppercase">UPS Contract Management Portal – RINL</small>
-        <h1 class="fw-bold display-5 mt-2">Register Complaints & Submit PM Reports Instantly</h1>
-        <p class="hero-content mt-3">
-          This internal portal enables RINL teams to log UPS-related complaints, submit preventive maintenance reports,
-          and track ETL contract progress — all from a centralized dashboard.
-        </p>
-
-        <!-- <p class="hero-content mt-3 ">This system enables seamless UPS issue tracking and maintenance reporting, reducing delays and improving reliability in power-sensitive areas of the plant.</p> -->
-      </div>
-
-      <!-- Right Column -->
-      <div class="col-md-6 text-center">
-        <img src="homePage_img.webp" alt="UPS System Illustration" class="img-fluid" style="max-height: 400px;">
-      </div>
-
+    <!-- Bottom Footer Text -->
+    <div class="footer-bottom">
+      <div>Website Last updated On 2025-06-23 17:39:00</div>
+      <div>&copy; 2025 - Summer Internship Project | Developed under mr. K.N.N.S Yadav | All rights reserved.</div>
     </div>
-  </div>
-</section>
-
-
-<section class="resources-section py-5" style="background-color: #002147;">
-  <div class="container bg-white rounded shadow p-5 pb-4">
-
-    <h4 class="fw-bold text-primary mb-4 border-bottom pb-2">
-      Want more? Discover key features of this portal.
-    </h4>
-
-    <!-- Feature 1 -->
-    <div class="feature-card border rounded p-3 mb-3 shadow-sm">
-      <h5 class="fw-bold text-uppercase text-primary">Complaint Registration</h5>
-      <p class="text-muted mb-0">
-        Instantly log issues related to UPS systems across all RINL zones. Complaints are categorized and stored with asset details for quicker response by contractors and coordinators.
-      </p>
     </div>
+  </footer>
 
-    <!-- Feature 2 -->
-    <div class="feature-card border rounded p-3 mb-3 shadow-sm">
-      <h5 class="fw-bold text-uppercase text-primary">Preventive Maintenance Submission</h5>
-      <p class="text-muted mb-0">
-        Submit monthly PM reports in a structured digital format. This improves traceability of maintenance activities and ensures timely upkeep of UPS equipment under ETL contracts.
-      </p>
-    </div>
+  <script src="home.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-    <!-- Feature 3 -->
-    <div class="feature-card border rounded p-3 mb-3 shadow-sm">
-      <h5 class="fw-bold text-uppercase text-primary">Complaint Status & Approval Panel</h5>
-      <p class="text-muted mb-0">
-        Coordinators and EICs can track complaint resolution status and review PM submissions. Built-in workflow simplifies review, feedback, and approval — all in one place.
-      </p>
-    </div>
+</body>
 
-  </div>
-</section>
-
-
-<!-- complaint module -->
- <section class="complaint-module-section py-5">
-  <div class="container">
-    <div class="row align-items-center">
-
-      <!-- Left: Text Content -->
-      <div class="left-text col-md-6">
-        <h2 class="fw-bold mb-3">Register UPS Complaints Effortlessly</h2>
-        <p class="text-muted">
-          The complaint module allows contractors and plant personnel to report issues related to UPS systems across all zones. Each complaint is tagged with an asset number, timestamp, and location for effective resolution tracking.
-        </p>
-        <p class="text-muted">
-          Coordinators and EICs can review submitted complaints, monitor resolution progress, and escalate if required. The system ensures timely action, accountability, and improved communication between teams.
-        </p>
-        <a href="complaint.html" class="btn btn-success mt-3">Log a New Complaint</a>
-      </div>
-
-      <!-- Right: Illustration -->
-      <div class="complaint-mod col-md-6 text-center">
-        <img src="complaint-img.png" alt="Complaint Module Graphic" >
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- pm module -->
-<section class="pm-module-section py-5">
-  <div class="container">
-    <div class="row align-items-center">
-
-      <!-- Left: Text Content -->
-      <div class="left-text col-md-6">
-        <h2 class="fw-bold mb-3">Submit Preventive Maintenance Reports Digitally</h2>
-        <p class="text-muted">
-            The PM module enables contractors to upload monthly Preventive Maintenance checklists for each UPS asset as per ETL contract requirements. The digital submission ensures structured reporting and traceable records.
-        </p>
-        <p class="text-muted">
-          EICs and coordinators can review these reports, verify fieldwork, and approve or return them with remarks — streamlining the entire compliance workflow across departments and zones.
-        </p>
-        <a href="preventive_maintenance.html" class="btn btn-success mt-3">Submit PM Report</a>
-      </div>
-
-      <!-- Right: Illustration -->
-      <div class="pm-module col-md-6 text-center">
-        <img src="pm-img2.png" alt="PM Module Graphic" style="background-color: white;">
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- view pm bill module -->
-<section class="bill-module-section py-5">
-  <div class="container">
-    <div class="row align-items-center">
-
-      <!-- Left: Text Content -->
-      <div class="left-text col-md-6">
-        <h2 class="fw-bold mb-3">Track and View PM Billing Status</h2>
-        <p class="text-muted">
-            This module allows authorized users to view the monthly preventive maintenance bills submitted under the ETL UPS contract. It includes information on asset-wise PM completion, submission dates, and billing verification status.
-        </p>
-        <p class="text-muted">
-          Coordinators and EICs can cross-check reports, ensure compliance, and monitor billing summaries — ensuring accountability and process transparency across maintenance cycles.
-        </p>
-        <a href="#" class="btn btn-success mt-3">View PM Bill</a>
-      </div>
-
-      <!-- Right: Illustration -->
-      <div class="pm-bill col-md-6 text-center">
-        <img src="pm-bill-img2.png" alt="PM bill" style="background-color: white;">
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- footer -->
- <!-- Footer -->
-<footer class="container-fluid px-4 py-3">
-  
-<!-- Middle Logos Row -->
-<div class="footer-mid">
-  <img src="footer-img5.png" alt="India Gov" width="150px">
-  <img src="footer-img4.png" alt="CMMI">
-  <img src="Footer-img1.jpg" alt="Climate Action">
-</div>
-
-<!-- Bottom Footer Text -->
-<div class="footer-bottom">
-  <div>Website Last updated On 2025-06-23 17:39:00</div>
-  <div>&copy; 2025 - Summer Internship Project | Developed under mr. K.N.N.S Yadav | All rights reserved.</div>
-</div>
-  </div>
-</footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-  </body>
 </html>
