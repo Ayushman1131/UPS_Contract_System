@@ -14,8 +14,7 @@ exports.complaintRaise =  async (req, res) => {
     category: req.body.category,
     date: req.body.date,
     department: req.body.department,
-    max_no: req.body.max_no,
-    mobile_no: req.body.mobile_no,
+    contact: req.body.contact,
     description: req.body.description,
     feedback: req.body.feedback,
     raised_by: req.body.raised_by,
@@ -30,10 +29,6 @@ exports.complaintForm = async (req, res) => {
   res.sendFile(path.join(__dirname, '..','..','frontend','complaint.html'));
 };
 
-exports.complaintReportpage = async (req, res) => {
-  res.sendFile(path.join(__dirname, '..','..','frontend','Complaint_Report.html'));
-}
-
 exports.complaintID = async (req, res) => {
   try {
     const complaint_id = await generateNextComplaintId();
@@ -44,43 +39,6 @@ exports.complaintID = async (req, res) => {
 };
 
 exports.complaintReport = async (req, res) => {
-	
-  const userZone = req.session?.user?.zone;
-  const complaints = await Complaint.find({ zone: userZone });  
-  if (complaints.length === 0) {
-    return res.status(404).json({ message: 'No complaint records found' });
-}
+	const complaints = await Complaint.find();
   res.json(complaints);
 };
-
-exports.updateStatus = async (req, res) => {
-  try {
-    const cmpId = req.body.cmp_id;		
-    const record = await Maintenance.findOneAndUpdate(
-      {complaint_id:cmpId},
-      req.body.Status,
-      { new: true }
-    );
-
-    if (!record) {
-      return res.status(404).send("Maintenance request not found");
-    }
-    
-    res.json("Maintenance request updated successfully: " + record);
-  } catch (error) {
-    res.status(500).send("Server error: " + error.message);
-  }
-}
-
-exports.complaintInbox = async (req, res) => {
-  try {
-    const complaints = await Complaint.find();
-    if (complaints.length === 0) {
-      return res.status(404).json({ message: 'No complaint records found.' });
-      }
-    res.json(complaints);
-  } catch (error) {
-    console.error("Error fetching complaint inbox:", error);
-    res.status(500).json({ message: "Internal server error" });
-  }
-}

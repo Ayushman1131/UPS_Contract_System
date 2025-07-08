@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Preventive Maintenance Module</title>
     <link
@@ -43,30 +42,34 @@
           <div class="row mb-3">
             <div class="col-md-3">
               <label class="form-label">ETL_UPS_Sl_No</label>
-              <input id="slNo" type="text" class="form-control" />
+              <input type="text" class="form-control" value="09072116-17" />
             </div>
             <div class="col-md-3">
               <label class="form-label">Location</label>
-              <input id="location" type="text" class="form-control" />
+              <input
+                type="text"
+                class="form-control"
+                value="PCI 1 & 2 PLC ROOM"
+              />
             </div>
             <div class="col-md-3">
               <label class="form-label">PM_Date</label>
-              <input id="date" type="date" class="form-control" />
+              <input type="date" class="form-control" />
             </div>
             <div class="col-md-3">
               <label class="form-label">PM_Done_By</label>
-              <input id="pmDoneBy" type="text" class="form-control"/>
+              <input type="text" class="form-control" value="PAVAN KALYAN" />
             </div>
           </div>
 
           <div class="row mb-3">
             <div class="col-md-6">
               <label class="form-label">BOQ_Item</label>
-              <input id="boqitem" type="text" class="form-control" />
+              <input type="text" class="form-control" value="410005248" />
             </div>
             <div class="col-md-6">
               <label class="form-label">Ratings</label>
-              <input id="ratings" type="text" class="form-control" />
+              <input type="text" class="form-control" value="2 X 40" />
             </div>
           </div>
 
@@ -76,125 +79,127 @@
 
             <div class="row">
               <div class="col-md-6">
-                <!-- Column 1 -->
+                <!-- Column 2 -->
                 <div
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
-                  <label>Functional Checking:</label>
-                  <div id="Functional-Checking">
-                    <input type="radio" name="fc" value="Yes" /> Yes
-                    <input type="radio" name="fc" value="No" /> No
+                  <label class="me-2">Redundancy Healthiness:</label>
+                  <div>
+                    <input type="radio" name="redundancy" value="Yes" /> Yes
+                    <input type="radio" name="redundancy" value="No" /> No
+                    <input type="radio" name="redundancy" value="NA" /> NA
                   </div>
                 </div>
 
                 <div
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
-                  <label>Battery Takeover:</label>
-                  <div id="Battery-Takeover">
-                    <input type="radio" name="bt" value="Yes" /> Yes
-                    <input type="radio" name="bt" value="No" /> No
+                  <label class="me-2">Static Bypass Changeover:</label>
+                  <div>
+                    <input type="radio" name="bypass" value="Yes" /> Yes
+                    <input type="radio" name="bypass" value="No" /> No
                   </div>
                 </div>
 
                 <div
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
-                  <label>Function of SCVS:</label>
-                  <div id="Function-of-SCVS">
-                    <input type="radio" name="scvs" value="Yes" /> Yes
-                    <input type="radio" name="scvs" value="No" /> No
-                    <input type="radio" name="scvs" value="NA" /> NA
+                  <label class="me-2">Protection Checking:</label>
+                  <div>
+                    <input type="radio" name="protection" value="Yes" /> Yes
+                    <input type="radio" name="protection" value="No" /> No
                   </div>
                 </div>
 
                 <div
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
-                  <label>Blowing/Vacuum Cleaning:</label>
-                  <div id="Blowing/Vacuum-Cleaning">
-                    <input type="radio" name="bvc" value="Yes" /> Yes
-                    <input type="radio" name="bvc" value="No" /> No
+                  <label class="me-2">Tightness of Connections:</label>
+                  <div>
+                    <input type="radio" name="tight" value="Yes" /> Yes
+                    <input type="radio" name="tight" value="No" /> No
                   </div>
                 </div>
 
                 <div
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
-                  <label>Physical Damage Check:</label>
-                  <div id="Physical-Damage-Check">
-                    <input type="radio" name="damage" value="Yes" /> Yes
-                    <input type="radio" name="damage" value="No" /> No
+                  <label class="me-2">Working of Contactors:</label>
+                  <div>
+                    <input type="radio" name="contactors" value="Yes" /> Yes
+                    <input type="radio" name="contactors" value="No" /> No
+                    <input type="radio" name="contactors" value="NA" /> NA
                   </div>
                 </div>
 
                 <div
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
-                  <label>All Thyristors:</label>
-                  <div id="All-Thyristors">
-                    <input type="radio" name="thyristors" value="Yes" /> Yes
-                    <input type="radio" name="thyristors" value="No" /> No
+                  <label class="me-2">All IGBTs:</label>
+                  <div>
+                    <input type="radio" name="igbt" value="Yes" /> Yes
+                    <input type="radio" name="igbt" value="No" /> No
                   </div>
                 </div>
 
                 <div
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
-                  <label>Diodes and Capacitors:</label>
-                  <div id="Diodes-and-Capacitors">
-                    <input type="radio" name="dc" value="Yes" /> Yes
-                    <input type="radio" name="dc" value="No" /> No
+                  <label class="me-2">Indication Lamps:</label>
+                  <div>
+                    <input type="radio" name="lamp" value="Yes" /> Yes
+                    <input type="radio" name="lamp" value="No" /> No
                   </div>
                 </div>
 
                 <div
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
-                  <label>Cooling Fans:</label>
-                  <div id="Cooling-Fans">
-                    <input type="radio" name="cooling" value="Yes" /> Yes
-                    <input type="radio" name="cooling" value="No" /> No
+                  <label class="me-2">Panel Locking:</label>
+                  <div>
+                    <input type="radio" name="locking" value="Yes" /> Yes
+                    <input type="radio" name="locking" value="No" /> No
                   </div>
                 </div>
 
                 <div
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
-                  <label>Switches Checking:</label>
-                  <div id="Switches-Checking">
-                    <input type="radio" name="switch" value="Yes" /> Yes
-                    <input type="radio" name="switch" value="No" /> No
+                  <label class="me-2">Panel Distribution Boards:</label>
+                  <div>
+                    <input type="radio" name="dist" value="Yes" /> Yes
+                    <input type="radio" name="dist" value="No" /> No
+                    <input type="radio" name="dist" value="NA" /> NA
                   </div>
                 </div>
 
                 <div
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
-                  <label>Connecting Cables:</label>
-                  <div id="Connecting-Cables">
-                    <input type="radio" name="cables" value="Yes" /> Yes
-                    <input type="radio" name="cables" value="No" /> No
+                  <label class="me-2">Panel Meters Working:</label>
+                  <div>
+                    <input type="radio" name="meters" value="Yes" /> Yes
+                    <input type="radio" name="meters" value="No" /> No
                   </div>
                 </div>
 
                 <div
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
-                  <label>PPE Check (Helmet, Safety Shoes):</label>
-                  <div id="PPE-Check">
-                    <input type="radio" name="ppe" value="Yes" /> Yes
-                    <input type="radio" name="ppe" value="No" /> No
+                  <label class="me-2">Tools & Calibrated Instruments:</label>
+                  <div>
+                    <input type="radio" name="tools" value="Yes" /> Yes
+                    <input type="radio" name="tools" value="No" /> No
                   </div>
                 </div>
 
                 <div
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
-                  <label>Surroundings & Escape Path:</label>
-                  <div id="Surroundings-&-Escape-Path">
-                    <input type="radio" name="surround" value="Yes" /> Yes
-                    <input type="radio" name="surround" value="No" /> No
+                  <label class="me-2">Work Permit from Shop Electrical:</label>
+                  <div>
+                    <input type="radio" name="permit" value="Yes" /> Yes
+                    <input type="radio" name="permit" value="No" /> No
                   </div>
                 </div>
               </div>
@@ -205,7 +210,7 @@
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
                   <label>Redundancy Healthiness:</label>
-                  <div id="Redundancy-Healthiness">
+                  <div>
                     <input type="radio" name="redundancy" value="Yes" /> Yes
                     <input type="radio" name="redundancy" value="No" /> No
                     <input type="radio" name="redundancy" value="NA" /> NA
@@ -216,7 +221,7 @@
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
                   <label>Static Bypass Changeover:</label>
-                  <div id="Static-Bypass-Changeover">
+                  <div>
                     <input type="radio" name="bypass" value="Yes" /> Yes
                     <input type="radio" name="bypass" value="No" /> No
                   </div>
@@ -226,7 +231,7 @@
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
                   <label>Protection Checking:</label>
-                  <div id="Protection-Checking">
+                  <div>
                     <input type="radio" name="protection" value="Yes" /> Yes
                     <input type="radio" name="protection" value="No" /> No
                   </div>
@@ -236,7 +241,7 @@
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
                   <label>Tightness of Connections:</label>
-                  <div id="Tightness-of-Connections">
+                  <div>
                     <input type="radio" name="tight" value="Yes" /> Yes
                     <input type="radio" name="tight" value="No" /> No
                   </div>
@@ -246,7 +251,7 @@
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
                   <label>Working of Contactors:</label>
-                  <div id="Working-of-Contactors">
+                  <div>
                     <input type="radio" name="contactors" value="Yes" /> Yes
                     <input type="radio" name="contactors" value="No" /> No
                     <input type="radio" name="contactors" value="NA" /> NA
@@ -257,7 +262,7 @@
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
                   <label>All IGBTs:</label>
-                  <div id="All-IGBTs">
+                  <div>
                     <input type="radio" name="igbt" value="Yes" /> Yes
                     <input type="radio" name="igbt" value="No" /> No
                   </div>
@@ -267,7 +272,7 @@
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
                   <label>Indication Lamps:</label>
-                  <div id="Indication-Lamps">
+                  <div>
                     <input type="radio" name="lamp" value="Yes" /> Yes
                     <input type="radio" name="lamp" value="No" /> No
                   </div>
@@ -277,7 +282,7 @@
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
                   <label>Panel Locking:</label>
-                  <div id="Panel-Locking">
+                  <div>
                     <input type="radio" name="locking" value="Yes" /> Yes
                     <input type="radio" name="locking" value="No" /> No
                   </div>
@@ -287,7 +292,7 @@
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
                   <label>Panel Distribution Boards:</label>
-                  <div id="Panel-Distribution-Boards">
+                  <div>
                     <input type="radio" name="dist" value="Yes" /> Yes
                     <input type="radio" name="dist" value="No" /> No
                     <input type="radio" name="dist" value="NA" /> NA
@@ -298,7 +303,7 @@
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
                   <label>Panel Meters Working:</label>
-                  <div id="Panel-Meters-Working">
+                  <div>
                     <input type="radio" name="meters" value="Yes" /> Yes
                     <input type="radio" name="meters" value="No" /> No
                   </div>
@@ -308,7 +313,7 @@
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
                   <label>Tools & Calibrated Instruments:</label>
-                  <div id="Tools-&-Calibrated-Instruments">
+                  <div>
                     <input type="radio" name="tools" value="Yes" /> Yes
                     <input type="radio" name="tools" value="No" /> No
                   </div>
@@ -318,7 +323,7 @@
                   class="mb-2 d-flex justify-content-between align-items-center"
                 >
                   <label>Work Permit from Shop Electrical:</label>
-                  <div id="Work-Permit-from-Shop-Electrical">
+                  <div>
                     <input type="radio" name="permit" value="Yes" /> Yes
                     <input type="radio" name="permit" value="No" /> No
                   </div>
@@ -331,45 +336,45 @@
           <div class="row mb-3">
             <div class="col-md-6">
               <label class="form-label">AC Input Voltages (RY,YB,BR)</label>
-              <input id="ac-input-voltage" type="text" class="form-control" />
+              <input type="text" class="form-control" />
             </div>
             <div class="col-md-6">
               <label class="form-label">AC Input Current (IR,IY,IB)</label>
-              <input id="ac-input-current" type="text" class="form-control" />
+              <input type="text" class="form-control" />
             </div>
             <div class="col-md-6">
               <label class="form-label">Input Frequency in Hz</label>
-              <input id="input-frequency" type="text" class="form-control" />
+              <input type="text" class="form-control" />
             </div>
             <div class="col-md-6">
               <label class="form-label">DC Rectifier Output & Current</label>
-              <input id="dc-rectifier-output" type="text" class="form-control" />
+              <input type="text" class="form-control" />
             </div>
             <div class="col-md-6">
               <label class="form-label">DC SMPS Voltages</label>
-              <input id="dc-smps" type="text" class="form-control" />
+              <input type="text" class="form-control" />
             </div>
             <div class="col-md-6">
               <label class="form-label">AC SMPS Voltages</label>
-              <input id="ac-smps" type="text" class="form-control" />
+              <input type="text" class="form-control" />
             </div>
             <div class="col-md-6">
               <label class="form-label">AC Output Voltage</label>
-              <input id="ac-output-voltage" type="text" class="form-control" />
+              <input type="text" class="form-control" />
             </div>
             <div class="col-md-6">
               <label class="form-label">AC Output Current</label>
-              <input id="ac-output-current" type="text" class="form-control" />
+              <input type="text" class="form-control" />
             </div>
             <div class="col-md-6">
               <label class="form-label">Output Frequency in Hz</label>
-              <input id="output-frequenct" type="text" class="form-control" />
+              <input type="text" class="form-control" />
             </div>
             <div class="col-md-6">
               <label class="form-label"
                 >Battery Voltage & Charging Current</label
               >
-              <input id="battery-voltage" type="text" class="form-control" />
+              <input type="text" class="form-control" />
             </div>
           </div>
 
@@ -377,27 +382,27 @@
           <div class="row mb-3">
             <div class="col-md-6">
               <label class="form-label">AUX Input Current (IR,IY,IB)</label>
-              <input id="aux-input-current" type="text" class="form-control" />
+              <input type="text" class="form-control" />
             </div>
             <div class="col-md-6">
               <label class="form-label">AUX Input Voltages (RY,YB,BR)</label>
-              <input id="aux-input-voltage" type="text" class="form-control" />
+              <input type="text" class="form-control" />
             </div>
             <div class="col-md-6">
               <label class="form-label">AUX Output Voltage</label>
-              <input id="aux-output-voltage" type="text" class="form-control" />
+              <input type="text" class="form-control" />
             </div>
             <div class="col-md-6">
               <label class="form-label">AUX Output Current</label>
-              <input id="aux-output-current" type="text" class="form-control" />
+              <input type="text" class="form-control" />
             </div>
             <div class="col-md-6">
               <label class="form-label">AUX Input Frequency in Hz</label>
-              <input id="aux-input-frequency" type="text" class="form-control" />
+              <input type="text" class="form-control" />
             </div>
             <div class="col-md-6">
               <label class="form-label">Battery Backup Time (in Minutes)</label>
-              <input id="battery-backup-time" type="text" class="form-control" />
+              <input type="text" class="form-control" />
             </div>
           </div>
 
@@ -411,7 +416,7 @@
 
           <div class="mb-3">
             <label class="form-label">Spares Replaced (if any):</label>
-            <div id="spares-replaced">
+            <div>
               <input type="radio" name="spares" value="Yes" /> Yes
               <input type="radio" name="spares" value="No" /> No
             </div>
@@ -455,7 +460,6 @@
       </div>
     </footer>
 
-    <script src="pm.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link
       rel="stylesheet"
