@@ -29,17 +29,6 @@
   margin-right: 5px;
 }
 
-/* .green-btn {
-    background-color: #28a745;
-    color: white;
-    font-weight: bold;
-}
-
-.green-btn:hover {
-  background-color: #218838;
-  color: white;
-} */
-
 .dropdown-menu {
   font-size: 14px;
 }
@@ -71,7 +60,7 @@
     to right,
     #018fee,
     #0d6efd
-  ); /* deep purple gradient */
+  ); 
   color: white;
   height: 48rem;
 }
@@ -100,7 +89,7 @@
 .complaint-module-section,
 .pm-module-section,
 .bill-module-section h2 {
-  color: #002147; /* Steel plant blue tone */
+  color: #002147; 
 }
 .complaint-module-section .btn-primary {
   background-color: #005b8e;
